@@ -17,11 +17,15 @@
         
             class Saludo extends React.Component {
                 render() {
-                    return <h1> Hola { this.props.name } !</h1>
+                    return <h1>{ this.props.name } !</h1>
                 }
             }
     
             ReactDOM.render(<Saludo name="Juli" />, document.getElementById('example'));
+            
+            setTimeout(() => {
+                ReactDOM.render(<Saludo name="Juli and Camilo" />, document.getElementById('example'));
+            },3000)
             
         </script>
     </body>
