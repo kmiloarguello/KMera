@@ -14,11 +14,11 @@
         <script type="text/babel">
         var Saludo = React.createClass({
             render: function(){
-                return <h1>Mi primer Hola Mundo con React</h1>
+                return <h1>Hola { this.props.name } </h1> 
             }
         })
         
-        ReactDOM.render(<Saludo />, document.getElementById('example'));
+        ReactDOM.render(<Saludo name="Camilo" />, document.getElementById('example'));
             
         </script>
     </body>
