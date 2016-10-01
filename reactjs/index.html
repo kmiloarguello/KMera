@@ -14,18 +14,18 @@
         
         
         <script type="text/babel">
-        
-            class Saludo extends React.Component {
-                render() {
-                    return <h1>{ this.props.name } !</h1>
-                }
-            }
-    
-            ReactDOM.render(<Saludo name="Juli" />, document.getElementById('example'));
+        var Saludo = React.createClass({
+            propTYpes: {
+                name: React.PropTypes.string,
+                edad: React.PropTypes.number
+            },
             
-            setTimeout(() => {
-                ReactDOM.render(<Saludo name="Juli and Camilo" />, document.getElementById('example'));
-            },3000)
+            render: function(){
+                 return <h1>Tu nombre es { this.props.name } y tu edad es { this.props.edad } años</h1> 
+            }
+         })
+
+            ReactDOM.render(<Saludo name="Camilo" edad="23" />, document.getElementById('example'));
             
         </script>
     </body>
