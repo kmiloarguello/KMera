@@ -2,6 +2,8 @@
     <head>
         <meta charset="UTF-8" />
         <title>Pruebas React JS</title>
+        
+        <link rel="stylesheet" href="css/estilos.css" type="text/css" />
    
         <script src="js/react.js"></script>
         <script src="js/react-dom.js"></script>
@@ -25,7 +27,9 @@
         class Camilo extends React.Component {
             render(){
                 var url = 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466';
-                return <div><img src={url} />{ this.props.name}</div>
+                return <div className="letras">
+                            <img src={url} className="mi_imagen"/>{ this.props.name}
+                        </div>
             }
         }
         
