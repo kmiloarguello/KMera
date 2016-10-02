@@ -22,19 +22,28 @@
             { number: 2, name: 'Andres'}
             ];
             
-     
+        class AvatarCA extends React.Component{
+            render(){
+                var url = 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466';
+                return <img src={url} className="mi_imagen"/>
+            }
+        }
         
         class Camilo extends React.Component {
             render(){
-                var url = 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466';
                 return <div className="letras">
-                            <img src={url} className="mi_imagen"/>{ this.props.name}
-                        </div>
+                            <AvatarCA number={ this.props.number } />
+                            { this.props.name }
+                        </div> 
             }
         }
         
         var C = CA[0];
-        ReactDOM.render(<Camilo name={C.name} number={C.number} />, document.getElementById('example'));
+        
+        ReactDOM.render(
+            <Camilo name={C.name} number={C.number} />, 
+            document.getElementById('example')
+            );
             
         </script>
     </body>
