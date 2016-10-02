@@ -46,11 +46,6 @@ for iii in xrange(1,numFrames1):
 	I[:,:,iii] = canal_R + canal_G + canal_B
 
 	gris_video = I[:,:,iii]
-	
-	#cv2.imshow('Video Preprocesado', gris_video.astype(np.uint8))  
-	#if 0xFF & cv2.waitKey(300) == 3:
-	#	break
-
 	pass
 
 ################################################################################################################################
@@ -81,10 +76,7 @@ for ii in xrange(1,numFrames1-1):
 	mascara[:,:,ii+1] = delta[:,:,ii+1] > varianza[:,:,ii+1]
 
 	reproducir = mascara[:,:,ii+1]
-	#cv2.imshow('Deteccion de Movimiento', bool.reproducir)
-	#if 0xFF & cv2.waitKey(80) == 1:
-	#	break
-	
+
 	pass
 	
 #######################################################################################################
