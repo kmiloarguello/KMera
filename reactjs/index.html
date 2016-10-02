@@ -14,19 +14,23 @@
         
         
         <script type="text/babel">
-        class Saludo extends React.Component{
+        
+        var CA = [
+            { number: 1, name: 'Camilo'},
+            { number: 2, name: 'Andres'}
+            ];
+            
+     
+        
+        class Camilo extends React.Component {
             render(){
-                return <h1>Tu nombre es { this.props.name } y tu edad es { this.props.edad } años</h1>
+                var url = 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466';
+                return <div><img src={url} />{ this.props.name}</div>
             }
         }
         
-        Saludo.propTypes = {
-            name: React.PropTypes.string,
-            edad: React.PropTypes.number
-        }
-
-    
-        ReactDOM.render(<Saludo name="Camilo" edad="23" />, document.getElementById('example'));
+        var C = CA[0];
+        ReactDOM.render(<Camilo name={C.name} number={C.number} />, document.getElementById('example'));
             
         </script>
     </body>
