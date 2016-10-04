@@ -13,54 +13,10 @@
         <script src="js/react.js"></script>
         <script src="js/react-dom.js"></script>
         <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+        <script type="text/babel" src="js/main.js"></script>
  
     </head>
     <body>
-        
         <div id="example"></div>
-        
-        
-        <script type="text/babel">
-        
-        var CA = [
-            { number: 1, name: 'Camilo'}
-            ];
-            
-        class AvatarCA extends React.Component{
-            render(){
-                var url = 'http://data.whicdn.com/images/115143239/original.jpg';
-                return <img src={url} className="mi_imagen"/>
-            }
-        }
-        
-        class Camilo extends React.Component {
-            render(){
-                return <li className="letras">
-                            <AvatarCA number={ this.props.number } />
-                            { this.props.name }
-                        </li> 
-            }
-        }
-        
-        class Ctable extends React.Component{
-            render(){
-                return <ul className="lista">
-                        {
-                            this.props.CA.map((C) => {
-                                return <Camilo key={C.number}  name={ C.name } number={ C.number} />
-                            })
-                        }
-                        </ul>
-            }
-        }
-        
-        var C = CA[0];
-        
-        ReactDOM.render(
-            <Ctable CA={CA} />, 
-            document.getElementById('example')
-            );
-            
-        </script>
     </body>
 </html>
