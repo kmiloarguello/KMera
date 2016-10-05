@@ -37,6 +37,9 @@ header h1{
     width: 100%;
     min-height: 10vh;
 }
+.danger{
+    color:red;
+}
 #app-footer p{
     margin: 0 auto;
     width: 40%;
