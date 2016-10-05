@@ -1,7 +1,46 @@
 /* CSS */
 
 body{
-    background-color: #141414;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
     margin:0;
     padding:0;
+    color: #141414;
+    background: #ffcc08; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Safari */
+    background: -o-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%);/* Firefox 3.6 to 15 */
+    background: radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Standard syntax */
+}
+#app-container{
+    width: 100%;
+    overflow: hidden;
+}
+header{
+    width: 100%;
+    height: 10vh; /* viewport height */
+    position: fixed;
+    
+    text-align: center;
+}
+header h1{
+    line-height: 10vh;
+    margin:0;
+}
+#app-body {
+    padding-top: 15vh;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 75vh;
+}
+#app-footer{
+    width: 100%;
+    min-height: 10vh;
+}
+#app-footer p{
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    padding-top: 30px;
+    min-height: 75vh;
 }
