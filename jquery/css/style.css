@@ -37,13 +37,26 @@ header h1{
     width: 100%;
     min-height: 10vh;
 }
-.danger{
-    color:red;
-}
 #app-footer p{
     margin: 0 auto;
     width: 40%;
     text-align: center;
     padding-top: 30px;
     min-height: 75vh;
+}
+.djs{
+    width: 100%;
+    overflow: hidden;
+    padding: 16px;
+    margin-bottom:16px;
+}
+.djs img {
+    max-height: 60px;
+    max-width: 100px;
+}
+.djs .info{
+    padding-left: 20px;
+}
+.left{
+    float:left;
 }
