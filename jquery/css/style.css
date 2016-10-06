@@ -5,12 +5,8 @@ body{
     font-family: 'Roboto', sans-serif;
     margin:0;
     padding:0;
-    color: #141414;
-    background: #ffcc08; /* For browsers that do not support gradients */
-    background: -webkit-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Safari */
-    background: -o-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%);/* Firefox 3.6 to 15 */
-    background: radial-gradient(ellipse at 50% 30%, #f1cf98 1%,#e6aa3e 70%); /* Standard syntax */
+    color: #feebc2;
+    background: #1a3e5f;
 }
 #app-container{
     width: 100%;
@@ -20,7 +16,7 @@ header{
     width: 100%;
     height: 10vh; /* viewport height */
     position: fixed;
-    
+    background: #1a3e5f;
     text-align: center;
 }
 header h1{
@@ -32,6 +28,16 @@ header h1{
     width: 80%;
     margin: 0 auto;
     min-height: 75vh;
+}
+#app-body .search-form{
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+#app-body .search-form input[type="text"]{
+    padding: 12 22px;
 }
 #app-footer {
   width: 100%;
@@ -50,14 +56,89 @@ header h1{
     overflow: hidden;
     padding: 16px;
     margin-bottom:16px;
+    /*background-color: white;*/
+}
+.djs .img-container{
+    width: 20%;
 }
 .djs img {
-    max-height: 60px;
-    max-width: 100px;
+    max-width: 100%;
 }
 .djs .info{
-    padding-left: 20px;
+    width: 75%;
 }
 .left{
     float:left;
+}
+.right{
+    float:right;
+}
+
+
+.loader,
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  content: '';
+}
+.loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #1a3e5f;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.2em 5.1em;
+  transform-origin: 5.2em 5.1em;
+  -webkit-animation: load2 2s infinite ease 1.5s;
+  animation: load2 2s infinite ease 1.5s;
+}
+.loader {
+  color: #feebc2;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  box-shadow: inset 0 0 0 1em;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #1a3e5f;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 5.1em;
+  -webkit-transform-origin: 0px 5.1em;
+  transform-origin: 0px 5.1em;
+  -webkit-animation: load2 2s infinite ease;
+  animation: load2 2s infinite ease;
+}
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
