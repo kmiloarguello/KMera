@@ -11,6 +11,10 @@
     "browserify": "^13.1.0"
   },
   "scripts": {
-    "build-js": "browserify -t [ babelify --presets [ es2015 ] ] js/main.js > js/app.js"
+	"public": "mkdir -p public",
+	"build-js": "browserify -t [ babelify --presets [ es2015 ] ] js/main.js > public/app.js",
+	"copy-files": "cp css/style.css public/app.css && cp index.html public/index.html",
+	"build": "npm run public && npm run build-js && npm run copy-files"
+	
   }
 }
