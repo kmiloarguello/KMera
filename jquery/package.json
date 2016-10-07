@@ -11,6 +11,6 @@
     "browserify": "^13.1.0"
   },
   "scripts": {
-    "build-js": "browserify js/main.js > js/app.js"
+    "build-js": "browserify -t [ babelify --presets [ es2015 ] ] js/main.js > js/app.js"
   }
 }

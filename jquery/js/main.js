@@ -3,7 +3,7 @@
 * Module Dependencies
 **/
 
-var $ = require('jquery');
+import $ from 'jquery';
 
 /*  global $ */
 $(function() {
