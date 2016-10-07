@@ -56,8 +56,24 @@ header h1{
     overflow: hidden;
     padding: 16px;
     margin-bottom:16px;
+	position: relative;
     /*background-color: white;*/
 }
+.em-maple_leaf{
+	border: 0;
+	outline: 0;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out;
+}
+.em-maple_leaf:hover{
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);	
+}
+
 .djs .img-container{
     width: 20%;
 }
@@ -142,3 +158,4 @@ header h1{
     transform: rotate(360deg);
   }
 }
+

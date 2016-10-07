@@ -2,6 +2,13 @@
 /*  global $ */
 $(function() {
   var $tvShowsContainer = $('#app-body').find('.main-djs');
+	//Evento al hacer click
+	$tvShowsContainer.on('click', 'i.em-maple_leaf', function(ev){
+		var $this = $(this); //boton en el que se hizo click
+		$this.animate({
+			'fontSize': '30px'
+		}, 'fast');
+	})
 
   function renderShows(shows) {
     $tvShowsContainer.find('.loader').remove();
@@ -14,12 +21,12 @@ $(function() {
 
       var $article = $(article)
       $article.hide();
-      $tvShowsContainer.append($article.show());
+      $tvShowsContainer.append($article.fadeIn(1500));
     })
   }
 
   /**
-   * Submit serach form
+   * Enviar Datos
    */
 
   $('#app-body')
@@ -54,9 +61,11 @@ $(function() {
           '<div class="right info">' +
             '<h1>:name:</h1>' +
             '<p>:summary:</p>' +
+			'<i class="em em-maple_leaf"></i>'+
           '</div>' +
         '</article>';
-
+	
+	//Promises
   if (!localStorage.shows) {
     $.ajax('http://api.tvmaze.com/shows')
       .then(function (shows) {
