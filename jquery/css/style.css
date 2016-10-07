@@ -57,7 +57,12 @@ header h1{
     padding: 16px;
     margin-bottom:16px;
 	position: relative;
-    /*background-color: white;*/
+}
+.djs.liked{
+	background-color: rgba(255,255,255,0.1);
+}
+.djs.liked:hover{
+	background-color: rgba(255,255,255,0.05);
 }
 .em-maple_leaf{
 	border: 0;
@@ -67,11 +72,14 @@ header h1{
 	right: 10px;
 	cursor: pointer;
     -webkit-transition: -webkit-transform .8s ease-in-out;
-    transition:         transform .8s ease-in-out;
+    transition: transform .8s ease-in-out;
 }
 .em-maple_leaf:hover{
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);	
+}
+.djs.liked .em-maple_leaf{
+	font-size: 30px;
 }
 
 .djs .img-container{

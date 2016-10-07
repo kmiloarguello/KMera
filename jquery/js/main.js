@@ -5,9 +5,7 @@ $(function() {
 	//Evento al hacer click
 	$tvShowsContainer.on('click', 'i.em-maple_leaf', function(ev){
 		var $this = $(this); //boton en el que se hizo click
-		$this.animate({
-			'fontSize': '30px'
-		}, 'fast');
+		$this.closest('.djs').toggleClass('liked') //Buscar elemento Padre
 	})
 
   function renderShows(shows) {
