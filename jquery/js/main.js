@@ -1,4 +1,10 @@
 // JS
+/**
+* Module Dependencies
+**/
+
+var $ = require('jquery');
+
 /*  global $ */
 $(function() {
   var $tvShowsContainer = $('#app-body').find('.main-djs');
