@@ -2,9 +2,15 @@ var express = require("express"); //busca dentro de node_modules -> Express y tr
 
 var app = express();
 
+app.set('view engine','pug'); //Preprocese vistas y renderize con pug
+
+app.use(express.static('public'));
+
 app.get('/', function (req, res){
-    res.send('Hola Camilo');
+    res.render('index')
 })
+
+
 // Create localhost server
 // app.listen(3000, function (err){
 //     if(err) return console.log("Huubo error"), process.exit(1);
