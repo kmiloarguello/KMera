@@ -1,0 +1,26 @@
+{
+  "name": "kmera",
+  "version": "0.1.0",
+  "description": "Web app for share photos with your friends. It also was developed with Platzi's course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmiloarguello/myFullStack.git"
+  },
+  "keywords": [
+    "kmera",
+    "platziwork"
+  ],
+  "author": "Camilo Arguello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmiloarguello/myFullStack/issues"
+  },
+  "homepage": "https://github.com/kmiloarguello/myFullStack#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
