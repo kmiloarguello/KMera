@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/kmiloarguello/myFullStack#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "materialize-css": "^0.97.7"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
   }
 }
