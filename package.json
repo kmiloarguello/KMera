@@ -25,6 +25,7 @@
     "materialize-css": "^0.97.7"
   },
   "devDependencies": {
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2"
   }
 }
