@@ -4,7 +4,7 @@ $secondary-color: #125688;
 
 body{
     background-color: #fafafa;
-    color: #125688;
+    color: $secondary-color;
     font-family: 'Montserrat', sans-serif;
 }
 #main-container{
@@ -29,9 +29,10 @@ body{
     text-align: center;
 }
 
-.signup-box .kmgram{
+.kmgram{
     font-family: 'Oleo Script';
     font-size: 42px;
+    color: $secondary-color !important;
 }
 .signup-form{
     width: 65%;
@@ -49,5 +50,11 @@ body{
     background-color: #2d6599;
 }
 .signup-form .btn.btn-signup{
-    background-color: #125688;
+    background-color: $secondary-color;
+}
+.header{
+    background-color:white;
+    color: $secondary-color;
+    box-shadow: none;
+    border-bottom: 1px solid #edeeee;
 }

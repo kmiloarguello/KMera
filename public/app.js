@@ -2528,13 +2528,43 @@ module.exports = [
 },{}],17:[function(require,module,exports){
 /* HOMEPAGE */
 var page = require("page");
+var empty = require("empty-element");
+var template = require("./template.js");
+var title = require("title");
 
 page('/', function (ctx, next) {
+    title('KMera');
     var main = document.getElementById('main-container');
-    main.innerHTML = '<a href="/signup">Sign Up</a>';
+    empty(main).appendChild(template);
 });
 
-},{"page":4}],18:[function(require,module,exports){
+},{"./template.js":18,"empty-element":3,"page":4,"title":7}],18:[function(require,module,exports){
+/* TEMPLATE HOME */
+var yo = require("yo-yo");
+
+var template = yo`<nav class="header">
+                        <div class="nav-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col s12 m6 offset-m1">
+                                        <a href="/" class="brand-logo kmgram">KMera</a>
+                                    </div>
+                                    <div class="col s2 m6 push-m10">
+                                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
+                                            <i class="large material-icons">perm_identity</i>
+                                        </a>
+                                        <ul id="drop-user" class="dropdown-content">
+                                            <li><a href="#">Log Out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>`;
+
+module.exports = template;
+
+},{"yo-yo":8}],19:[function(require,module,exports){
 /* CODIGO DEL CLIENTE */
 var page = require("page");
 
@@ -2544,7 +2574,7 @@ require("./signin");
 
 page();
 
-},{"./homepage":17,"./signin":20,"./signup":22,"page":4}],19:[function(require,module,exports){
+},{"./homepage":17,"./signin":21,"./signup":23,"page":4}],20:[function(require,module,exports){
 var yo = require("yo-yo");
 module.exports = function landing(box) {
     return yo`<div class="container">
@@ -2561,7 +2591,7 @@ module.exports = function landing(box) {
                 </div>`;
 };
 
-},{"yo-yo":8}],20:[function(require,module,exports){
+},{"yo-yo":8}],21:[function(require,module,exports){
 /* SIGN IN */
 var page = require("page");
 var empty = require("empty-element");
@@ -2574,7 +2604,7 @@ page('/signin', function (ctx, next) {
     empty(main).appendChild(template);
 });
 
-},{"./template.js":21,"empty-element":3,"page":4,"title":7}],21:[function(require,module,exports){
+},{"./template.js":22,"empty-element":3,"page":4,"title":7}],22:[function(require,module,exports){
 /* TEMPLATE SIGN IN */
 var yo = require("yo-yo");
 var landing = require("../landing/index.js");
@@ -2608,7 +2638,7 @@ var signinForm = yo`<div class="col s12 m7">
 
 module.exports = landing(signinForm);
 
-},{"../landing/index.js":19,"yo-yo":8}],22:[function(require,module,exports){
+},{"../landing/index.js":20,"yo-yo":8}],23:[function(require,module,exports){
 /* SIGN UP */
 var page = require("page");
 var empty = require("empty-element");
@@ -2621,7 +2651,7 @@ page('/signup', function (ctx, next) {
     empty(main).appendChild(template);
 });
 
-},{"./template.js":23,"empty-element":3,"page":4,"title":7}],23:[function(require,module,exports){
+},{"./template.js":24,"empty-element":3,"page":4,"title":7}],24:[function(require,module,exports){
 /* TEMPLATE SIGN UP */
 var yo = require("yo-yo");
 var landing = require("../landing/index.js");
@@ -2657,4 +2687,4 @@ var signupForm = yo`<div class="col s12 m7">
 
 module.exports = landing(signupForm);
 
-},{"../landing/index.js":19,"yo-yo":8}]},{},[18]);
+},{"../landing/index.js":20,"yo-yo":8}]},{},[19]);
