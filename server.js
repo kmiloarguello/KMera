@@ -7,15 +7,15 @@ app.set('view engine','pug'); //Preprocese vistas y renderize con pug
 app.use(express.static('public'));
 
 app.get('/', function (req, res){
-    res.render('index')
+    res.render('index', { title: 'KMera' });
 })
 
 app.get('/signup', function (req, res){
-    res.render('index')
+    res.render('index',{ title: 'KMera - Signup' });
 })
 
 app.get('/signin', function (req, res){
-    res.render('index')
+    res.render('index', { title: 'KMera - Signin' });
 })
 
 // Create localhost server
