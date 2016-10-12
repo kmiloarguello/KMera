@@ -38,7 +38,7 @@ function compile(watch){
     
     if (watch){
         bundle.on('update', function(){
-            console.log('--> Bundling...');
+            console.log('--> Actualizando...');
             rebundle();
         })
     }
