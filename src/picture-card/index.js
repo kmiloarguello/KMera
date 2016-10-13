@@ -1,6 +1,6 @@
 var yo = require("yo-yo");
 var moment = require("moment");
-var translate = require("../translate/index.js");
+var translate = require("../translate");
 
 
 module.exports = function pictureCard(pic) {
@@ -25,7 +25,7 @@ module.exports = function pictureCard(pic) {
                   <a class="left" href="#" onclick=${like.bind(null,false)}>
                   <i class="fa fa-heart" aria-hidden="true"></i>
                   </a>
-                  <span class="left likes">${translate.message('likes', {likes: picture.likes})}</span>
+                  <span class="left likes">${translate.message('likes', {'likes': picture.likes})}</span>
                 </p>
               </div>
             </div>`
