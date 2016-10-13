@@ -6395,7 +6395,7 @@ body {
   color: #125688;
   font-family: 'Montserrat', sans-serif; }
 
-#main-container {
+.landing {
   margin: 30px auto; }
 
 .iphone {
@@ -6414,9 +6414,10 @@ body {
   border-radius: 3px;
   text-align: center; }
 
-.signup-box .kmgram {
+.kmgram {
   font-family: 'Oleo Script';
-  font-size: 42px; }
+  font-size: 42px;
+  color: #125688 !important; }
 
 .signup-form {
   width: 65%;
@@ -6435,3 +6436,54 @@ body {
 
 .signup-form .btn.btn-signup, .signup-form .btn-signup.btn-large {
   background-color: #125688; }
+
+.header {
+  background-color: white;
+  color: #125688;
+  box-shadow: none;
+  border-bottom: 1px solid #edeeee; }
+
+.timeline {
+  padding: 30px 0; }
+
+.row .col.m6 {
+  width: 0 !important; }
+
+.avatar {
+  max-width: 30px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 12px; }
+
+.card .card-content .card-title {
+  line-height: normal; }
+
+.card small.time {
+  line-height: 30px; }
+
+.card p {
+  padding: 20px 0; }
+
+.card .likes {
+  line-height: 30px;
+  margin-left: 12px; }
+
+.card i {
+  font-size: 30px; }
+
+.card .username {
+  color: #125688;
+  font-size: 15px; }
+
+.card .fa-heart-o {
+  color: #125688; }
+
+.card .fa-heart {
+  color: #f44336;
+  display: none; }
+
+.card.liked .fa-heart {
+  display: block; }
+
+.card.liked .fa-heart-o {
+  display: none; }

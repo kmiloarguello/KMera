@@ -7,7 +7,7 @@ body{
     color: $secondary-color;
     font-family: 'Montserrat', sans-serif;
 }
-#main-container{
+.landing{
     margin: 30px auto;
 }
 .iphone{
@@ -57,4 +57,59 @@ body{
     color: $secondary-color;
     box-shadow: none;
     border-bottom: 1px solid #edeeee;
+}
+.timeline{
+    padding: 30px 0;
+}
+.row .col.m6{
+    width: 0 !important;
+}
+
+$avatar-size: 30px;
+
+.avatar{
+    max-width: $avatar-size;
+    border-radius: 50%;
+    float:left;
+    margin-right:12px;
+}
+.card .card-content .card-title{
+    line-height: normal;
+}
+
+.card small.time{
+    line-height: $avatar-size;
+}
+
+.card p{
+    padding: 20px 0;
+}
+.card .likes {
+    line-height: 30px;
+    margin-left: 12px;
+}
+.card i{
+    font-size:30px;
+}
+.card .username{
+    color: $secondary-color;
+    font-size:15px;
+}
+
+.card .fa-heart-o {
+  color: $secondary-color;
+}
+
+.card .fa-heart {
+  color: #f44336;
+  display: none;
+}
+
+.card.liked {
+  .fa-heart {
+    display: block;
+  }
+  .fa-heart-o {
+    display: none;
+  }
 }

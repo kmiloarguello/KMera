@@ -2535,36 +2535,48 @@ var title = require("title");
 page('/', function (ctx, next) {
     title('KMera');
     var main = document.getElementById('main-container');
-    empty(main).appendChild(template);
+
+    var pictures = [{
+        user: {
+            username: 'kmiloarguello',
+            avatar: 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466'
+        },
+        url: 'office.jpg',
+        likes: 14,
+        liked: true
+    }, {
+        user: {
+            username: 'kmiloarguello',
+            avatar: 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466'
+        },
+        url: 'office.jpg',
+        likes: 46,
+        liked: true
+    }];
+
+    empty(main).appendChild(template(pictures));
 });
 
 },{"./template.js":18,"empty-element":3,"page":4,"title":7}],18:[function(require,module,exports){
 /* TEMPLATE HOME */
 var yo = require("yo-yo");
+var layout = require("../layout");
+var picture = require("../picture-card");
 
-var template = yo`<nav class="header">
-                        <div class="nav-wrapper">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col s12 m6 offset-m1">
-                                        <a href="/" class="brand-logo kmgram">KMera</a>
-                                    </div>
-                                    <div class="col s2 m6 push-m10">
-                                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
-                                            <i class="large material-icons">perm_identity</i>
-                                        </a>
-                                        <ul id="drop-user" class="dropdown-content">
-                                            <li><a href="#">Log Out</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+module.exports = function (pictures) {
+    var el = yo`<div class="container timeline">
+                        <div class="row">
+                            <div class="col s12 m10 offset-m1 l6 offset-l3">
+                            ${ pictures.map(function (pic) {
+        return picture(pic);
+    }) }
                             </div>
                         </div>
-                    </nav>`;
+                    </div>`;
+    return layout(el);
+};
 
-module.exports = template;
-
-},{"yo-yo":8}],19:[function(require,module,exports){
+},{"../layout":21,"../picture-card":22,"yo-yo":8}],19:[function(require,module,exports){
 /* CODIGO DEL CLIENTE */
 var page = require("page");
 
@@ -2574,7 +2586,7 @@ require("./signin");
 
 page();
 
-},{"./homepage":17,"./signin":21,"./signup":23,"page":4}],20:[function(require,module,exports){
+},{"./homepage":17,"./signin":23,"./signup":25,"page":4}],20:[function(require,module,exports){
 var yo = require("yo-yo");
 module.exports = function landing(box) {
     return yo`<div class="container">
@@ -2592,6 +2604,88 @@ module.exports = function landing(box) {
 };
 
 },{"yo-yo":8}],21:[function(require,module,exports){
+/* TEMPLATE LAYOUT HOMEPAGE */
+var yo = require("yo-yo");
+
+module.exports = function layout(content) {
+    return yo`<div>
+                    <nav class="header">
+                        <div class="nav-wrapper">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col s12 m6 offset-m1">
+                                        <a href="/" class="brand-logo kmgram">KMera</a>
+                                    </div>
+                                    <div class="col s2 m6 push-s10 push-m8">
+                                        <a href="#" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
+                                            <i class="large material-icons">perm_identity</i>
+                                        </a>
+                                        <ul id="drop-user" class="dropdown-content">
+                                            <li><a href="#">Log Out</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="content">
+                    ${ content }
+                    </div>
+                </div>`;
+};
+
+},{"yo-yo":8}],22:[function(require,module,exports){
+var yo = require("yo-yo");
+
+module.exports = function pictureCard(pic) {
+
+  var el;
+
+  function render(picture) {
+    return yo`<div class="card ${ picture.liked ? 'liked' : '' }">
+              <div class="card-image">
+                <img class="activator" src="${ pic.url }">
+              </div>
+              <div class="card-content">
+                <a href="/user/${ pic.user.username }" class="card-title">
+                  <img src="${ pic.user.avatar }" class="avatar"/>
+                  <span class="username">${ pic.user.username }</span>
+                </a>
+                <small class="right time">21h</small>
+                <p>
+                  <a class="left" href="#" onclick=${ like }>
+                  <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  </a>
+                  <a class="left" href="#" onclick=${ dislike }>
+                  <i class="fa fa-heart" aria-hidden="true"></i>
+                  </a>
+                  <span class="left likes">${ pic.likes } likes</span>
+                </p>
+              </div>
+            </div>`;
+  }
+
+  function like() {
+    pic.liked = true;
+    pic.likes++;
+    var newEL = render(pic);
+    yo.update(el, newEL);
+    return false;
+  }
+
+  function dislike() {
+    pic.liked = false;
+    pic.likes--;
+    var newEL = render(pic);
+    yo.update(el, newEL);
+    return false;
+  }
+
+  el = render(pic);
+  return el;
+};
+
+},{"yo-yo":8}],23:[function(require,module,exports){
 /* SIGN IN */
 var page = require("page");
 var empty = require("empty-element");
@@ -2604,7 +2698,7 @@ page('/signin', function (ctx, next) {
     empty(main).appendChild(template);
 });
 
-},{"./template.js":22,"empty-element":3,"page":4,"title":7}],22:[function(require,module,exports){
+},{"./template.js":24,"empty-element":3,"page":4,"title":7}],24:[function(require,module,exports){
 /* TEMPLATE SIGN IN */
 var yo = require("yo-yo");
 var landing = require("../landing/index.js");
@@ -2612,7 +2706,7 @@ var landing = require("../landing/index.js");
 var signinForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
-                                <h1 class="kmgram">KMERA</h1>
+                                <h1 class="kmgram">KMera</h1>
                                 <form class="signup-form">
                                 <h2>Sign up and share pictures with your friends</h2>
                                 <div class="section">
@@ -2638,7 +2732,7 @@ var signinForm = yo`<div class="col s12 m7">
 
 module.exports = landing(signinForm);
 
-},{"../landing/index.js":20,"yo-yo":8}],23:[function(require,module,exports){
+},{"../landing/index.js":20,"yo-yo":8}],25:[function(require,module,exports){
 /* SIGN UP */
 var page = require("page");
 var empty = require("empty-element");
@@ -2651,7 +2745,7 @@ page('/signup', function (ctx, next) {
     empty(main).appendChild(template);
 });
 
-},{"./template.js":24,"empty-element":3,"page":4,"title":7}],24:[function(require,module,exports){
+},{"./template.js":26,"empty-element":3,"page":4,"title":7}],26:[function(require,module,exports){
 /* TEMPLATE SIGN UP */
 var yo = require("yo-yo");
 var landing = require("../landing/index.js");
@@ -2659,7 +2753,7 @@ var landing = require("../landing/index.js");
 var signupForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
-                                <h1 class="kmgram">KMERA</h1>
+                                <h1 class="kmgram">KMera</h1>
                                 <form class="signup-form">
                                 <h2>Sign up and share pictures with your friends</h2>
                                 <div class="section">

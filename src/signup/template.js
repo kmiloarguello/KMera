@@ -5,7 +5,7 @@ var landing = require("../landing/index.js")
 var signupForm = yo`<div class="col s12 m7">
                         <div class="row">
                             <div class="signup-box">
-                                <h1 class="kmgram">KMERA</h1>
+                                <h1 class="kmgram">KMera</h1>
                                 <form class="signup-form">
                                 <h2>Sign up and share pictures with your friends</h2>
                                 <div class="section">
