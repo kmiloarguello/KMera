@@ -1,4 +1,5 @@
 /* CODIGO DEL CLIENTE */
+require("babel-polyfill");
 var page = require("page");
 
 require("./header");

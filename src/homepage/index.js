@@ -7,7 +7,7 @@ var request = require("superagent");
 var header = require("../header");
 var axios = require("axios");
 
-page('/', header , loadPicturesFetch ,function(ctx, next) {
+page('/', header , asyncload ,function(ctx, next) {
     title('KMera');
     var main = document.getElementById('main-container');
     
@@ -53,3 +53,12 @@ function loadPicturesFetch(ctx, next){
         })
 }
 
+async function asyncload(ctx,next){
+    try{
+        ctx.pictures  = await fetch('/api/pictures').then(res => res.json());
+        next();
+    }
+    catch(error){
+        return console.log(error);
+    }
+}
