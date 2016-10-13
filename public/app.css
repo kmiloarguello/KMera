@@ -6487,3 +6487,26 @@ body {
 
 .card.liked .fa-heart-o {
   display: none; }
+
+.form-upload span, .form-upload button {
+  color: white; }
+
+.form-upload .fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  background-color: #125688; }
+  .form-upload .fileUpload input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer; }
+
+.form-upload #btnUpload {
+  background-color: #125688; }
