@@ -1,4 +1,6 @@
 var yo = require("yo-yo");
+var translate = require("../translate")
+
 
 module.exports = function pictureCard(pic) {
   
@@ -14,7 +16,7 @@ module.exports = function pictureCard(pic) {
                   <img src="${pic.user.avatar}" class="avatar"/>
                   <span class="username">${pic.user.username}</span>
                 </a>
-                <small class="right time">21h</small>
+                <small class="right time">${rf.format(picture.createAt)}</small>
                 <p>
                   <a class="left" href="#" onclick=${like.bind(null, true)}>
                   <i class="fa fa-heart-o" aria-hidden="true"></i>
