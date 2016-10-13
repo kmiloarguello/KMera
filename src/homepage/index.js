@@ -15,7 +15,7 @@ page('/', function(ctx, next) {
                 avatar: 'https://avatars2.githubusercontent.com/u/13356409?v=3&s=466'
             },
             url: 'me_Toronto.jpg',
-            likes: 14,
+            likes: 1,
             liked: true,
             createAt: new Date()
         },
@@ -25,7 +25,7 @@ page('/', function(ctx, next) {
                 avatar: 'https://igcdn-photos-h-a.akamaihd.net/hphotos-ak-xap1/t51.2885-19/s150x150/11208137_960356917356807_1028677243_a.jpg'
             },
             url: 'juliiii.jpg',
-            likes: 46,
+            likes: 100000,
             liked: true,
             createAt: new Date().setDate(new Date().getDate() - 10)
         }
