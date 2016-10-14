@@ -68,7 +68,6 @@ app.post('/api/pictures', function(req, res){
         res.send('File uploaded');
     })
 })
-
 // Create localhost server
 // app.listen(3000, function (err){
 //     if(err) return console.log("Huubo error"), process.exit(1);
