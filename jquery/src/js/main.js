@@ -4,9 +4,9 @@
 
 import $ from 'jquery'
 import page from 'page'
-import { getShows } from '../km-api-client'
-import renderShows from '../render'
-import $tvShowsContainer from '../km-container'
+import { getShows } from '../km-api-client/main.js'
+import renderShows from '../render/main.js'
+import $tvShowsContainer from '../km-container/main.js'
 
 page('/', function (ctx, next) {
   if (!localStorage.shows) {

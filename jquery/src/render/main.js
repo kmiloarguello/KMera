@@ -3,7 +3,7 @@
 **/
 
 import $ from 'jquery'
-import $tvShowsContainer from '../km-container'
+import $tvShowsContainer from '../km-container/main.js'
 
 
 var template = `<article class="djs"> 
