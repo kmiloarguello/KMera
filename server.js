@@ -69,11 +69,11 @@ app.post('/api/pictures', function(req, res){
     })
 })
 // Create localhost server
-// app.listen(3000, function (err){
-//     if(err) return console.log("Huubo error"), process.exit(1);
+ app.listen(3000, function (err){
+     if(err) return console.log("Huubo error"), process.exit(1);
     
-//     console.log('Server on 3000')
-//})
+     console.log('Server on 3000')
+})
 
 //Create server on cloud 9
-app.listen(process.env.PORT, process.env.IP);
+//app.listen(process.env.PORT, process.env.IP);
